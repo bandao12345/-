@@ -1,0 +1,23 @@
+{
+  "purpose": "Optional local LLM for real retrieval-augmented generation, no cloud key needed",
+  "model": {
+    "repo": "Qwen/Qwen2.5-1.5B-Instruct-GGUF",
+    "revision": "91cad51170dc346986eccefdc2dd33a9da36ead9",
+    "filename": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF/resolve/91cad51170dc346986eccefdc2dd33a9da36ead9/qwen2.5-1.5b-instruct-q4_k_m.gguf",
+    "bytes": 1117320736,
+    "sha256": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+    "license": "Apache-2.0"
+  },
+  "runtime": {
+    "source": "https://github.com/ggml-org/llama.cpp",
+    "release": "b11804",
+    "filename": "llama-b11804-bin-win-cpu-x64.zip",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/download/b11804/llama-b11804-bin-win-cpu-x64.zip",
+    "bytes": 24067910,
+    "sha256": "3a3e417a0816329829081bdd443e3045ff3b2dbe866fcef89a1d919e941ce23f",
+    "license": "MIT",
+    "server_sha256": "36b6b336a34b8ee7ddc459a72a41bb221f5e47b7efaa7b5390e17893e7eb49d8",
+    "commit": "c7fc50941"
+  }
+}

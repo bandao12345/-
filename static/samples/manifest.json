@@ -1,0 +1,170 @@
+[
+  {
+    "id": "digit_handwritten",
+    "label": "单数字 · MNIST 7",
+    "filename": "digit_handwritten.png",
+    "expected": "7",
+    "kind": "digits",
+    "synthetic": false,
+    "source_url": "https://support.huaweicloud.com/qs-modelarts/modelarts_06_0035.html",
+    "description": "真实MNIST测试样例，裁剪并等比放大；不是独立的新手写测试集。",
+    "group": "真实手写与控制组"
+  },
+  {
+    "id": "digits_multi",
+    "label": "多数字 · 手写拼接",
+    "filename": "digits_multi.png",
+    "expected": "2026",
+    "kind": "digits",
+    "synthetic": true,
+    "source_url": "https://support.huaweicloud.com/qs-modelarts/modelarts_06_0035.html",
+    "description": "将真实MNIST数字逐字裁剪拼接，验证多数字路径；并非自然连续书写。",
+    "group": "真实手写与控制组"
+  },
+  {
+    "id": "latin_handwritten",
+    "label": "单字母 · NIST a",
+    "filename": "latin_handwritten.png",
+    "expected": "a",
+    "kind": "latin",
+    "synthetic": false,
+    "source_url": "https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/main/docs/datasets/images/nist_demo.png",
+    "description": "PaddleOCR文档公开NIST示例裁剪。预期值由目视标注，原图为a至i排列。",
+    "group": "真实手写与控制组"
+  },
+  {
+    "id": "latin_multi",
+    "label": "多字母 · 手写拼接",
+    "filename": "latin_multi.png",
+    "expected": "abc",
+    "kind": "latin",
+    "synthetic": true,
+    "source_url": "https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/main/docs/datasets/images/nist_demo.png",
+    "description": "从NIST官方文档示例中裁剪a、b、c后拼接；不是自然连笔英文。",
+    "group": "真实手写与控制组"
+  },
+  {
+    "id": "han_handwritten",
+    "label": "单汉字 · CASIA 耙",
+    "filename": "han_handwritten.png",
+    "expected": "耙",
+    "kind": "han",
+    "synthetic": false,
+    "source_url": "https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/main/docs/datasets/images/CASIA_0.jpg",
+    "description": "PaddleOCR公开CASIA示例裁剪。预期字由目视核对，图片含真实手写笔迹。 上游示例没有逐字标注；初始把/板经独立放大审读纠为耙/扳（左偏旁耒/扌），不是以OCR输出作为真值。",
+    "initial_manual_transcription": "把",
+    "group": "真实手写与控制组"
+  },
+  {
+    "id": "han_multi",
+    "label": "多汉字 · 手写拼接",
+    "filename": "han_multi.png",
+    "expected": "吧耙扳",
+    "kind": "han",
+    "synthetic": true,
+    "source_url": "https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/main/docs/datasets/images/CASIA_0.jpg",
+    "description": "CASIA公开示例的三个真实手写字裁剪拼接。非自然语句，仅检查多字识别。 上游示例没有逐字标注；初始把/板经独立放大审读纠为耙/扳（左偏旁耒/扌），不是以OCR输出作为真值。",
+    "initial_manual_transcription": "吧把板",
+    "group": "真实手写与控制组"
+  },
+  {
+    "id": "mixed_handwritten",
+    "label": "中英数字 · 手写拼接",
+    "filename": "mixed_handwritten.png",
+    "expected": "耙扳abc2026",
+    "kind": "mixed",
+    "synthetic": true,
+    "source_url": "https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/main/docs/datasets/images/CASIA_0.jpg",
+    "description": "由CASIA汉字、NIST字母及MNIST数字拼接；属于混合字种路径测试，不是自然混写基准。 上游示例没有逐字标注；初始把/板经独立放大审读纠为耙/扳（左偏旁耒/扌），不是以OCR输出作为真值。",
+    "initial_manual_transcription": "把板abc2026",
+    "group": "真实手写与控制组"
+  },
+  {
+    "id": "mixed_printed_control",
+    "label": "印刷对照 · 中英数字",
+    "filename": "mixed_printed_control.png",
+    "expected": "工程训练 ABC 2026",
+    "kind": "mixed",
+    "synthetic": true,
+    "source_url": "https://github.com/PaddlePaddle/PaddleOCR",
+    "description": "本机黑体生成的印刷字控制组，用于检查流程连通；不能据此宣称真实手写识别准确率。",
+    "group": "真实手写与控制组"
+  },
+  {
+    "id": "board_digit",
+    "label": "规范笔画 · 单数字 7",
+    "filename": "board_digit.png",
+    "expected": "7",
+    "kind": "digits",
+    "synthetic": true,
+    "source_url": "",
+    "description": "人工定义规范笔画模拟；用于真实写字板指针交互回放，不代表自然手写准确率。",
+    "group": "规范笔画"
+  },
+  {
+    "id": "board_digits",
+    "label": "规范笔画 · 多数字 2026",
+    "filename": "board_digits.png",
+    "expected": "2026",
+    "kind": "digits",
+    "synthetic": true,
+    "source_url": "",
+    "description": "人工定义规范笔画模拟；用于真实写字板指针交互回放，不代表自然手写准确率。",
+    "group": "规范笔画"
+  },
+  {
+    "id": "board_latin",
+    "label": "规范笔画 · 单字母 A",
+    "filename": "board_latin.png",
+    "expected": "A",
+    "kind": "latin",
+    "synthetic": true,
+    "source_url": "",
+    "description": "人工定义规范笔画模拟；用于真实写字板指针交互回放，不代表自然手写准确率。",
+    "group": "规范笔画"
+  },
+  {
+    "id": "board_latins",
+    "label": "规范笔画 · 多字母 ABC",
+    "filename": "board_latins.png",
+    "expected": "ABC",
+    "kind": "latin",
+    "synthetic": true,
+    "source_url": "",
+    "description": "人工定义规范笔画模拟；用于真实写字板指针交互回放，不代表自然手写准确率。",
+    "group": "规范笔画"
+  },
+  {
+    "id": "board_han",
+    "label": "规范笔画 · 单汉字 中",
+    "filename": "board_han.png",
+    "expected": "中",
+    "kind": "han",
+    "synthetic": true,
+    "source_url": "",
+    "description": "人工定义规范笔画模拟；用于真实写字板指针交互回放，不代表自然手写准确率。",
+    "group": "规范笔画"
+  },
+  {
+    "id": "board_hans",
+    "label": "规范笔画 · 多汉字 中国",
+    "filename": "board_hans.png",
+    "expected": "中国",
+    "kind": "han",
+    "synthetic": true,
+    "source_url": "",
+    "description": "人工定义规范笔画模拟；用于真实写字板指针交互回放，不代表自然手写准确率。",
+    "group": "规范笔画"
+  },
+  {
+    "id": "board_mixed",
+    "label": "规范笔画 · 混合 中国ABC2026",
+    "filename": "board_mixed.png",
+    "expected": "中国ABC2026",
+    "kind": "mixed",
+    "synthetic": true,
+    "source_url": "",
+    "description": "人工定义规范笔画模拟；用于真实写字板指针交互回放，不代表自然手写准确率。",
+    "group": "规范笔画"
+  }
+]

@@ -1,0 +1,179 @@
+{
+  "accuracy": 0.9892,
+  "loss": 0.03355494771003723,
+  "correct": 9892,
+  "total_samples": 10000,
+  "train_samples": 60000,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.19889534722268581,
+      "test_loss": 0.04904029951095581,
+      "test_accuracy": 0.9832,
+      "test_correct": 9832,
+      "test_total": 10000,
+      "lr": 0.7
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.0739847118296971,
+      "test_loss": 0.034444507670402524,
+      "test_accuracy": 0.9885,
+      "test_correct": 9885,
+      "test_total": 10000,
+      "lr": 0.48999999999999994
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.05567401458683113,
+      "test_loss": 0.03355494771003723,
+      "test_accuracy": 0.9892,
+      "test_correct": 9892,
+      "test_total": 10000,
+      "lr": 0.3429999999999999
+    }
+  ],
+  "confusion_matrix": [
+    [
+      978,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      1133,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      3,
+      4,
+      1017,
+      0,
+      1,
+      0,
+      1,
+      6,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      1003,
+      0,
+      3,
+      0,
+      1,
+      2,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      971,
+      0,
+      5,
+      0,
+      3,
+      2
+    ],
+    [
+      3,
+      0,
+      0,
+      3,
+      0,
+      883,
+      3,
+      0,
+      0,
+      0
+    ],
+    [
+      4,
+      2,
+      0,
+      0,
+      1,
+      4,
+      947,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      2,
+      7,
+      2,
+      0,
+      0,
+      0,
+      1014,
+      1,
+      2
+    ],
+    [
+      6,
+      0,
+      2,
+      0,
+      2,
+      0,
+      1,
+      2,
+      960,
+      1
+    ],
+    [
+      2,
+      2,
+      0,
+      0,
+      7,
+      4,
+      0,
+      4,
+      4,
+      986
+    ]
+  ],
+  "device": "cpu",
+  "elapsed_seconds": 128.61546206474304,
+  "source_url": "https://support.huaweicloud.com/qs-modelarts/modelarts_06_0035.html",
+  "timestamp": "2026-10-22 00:03:46",
+  "model_name": "Net",
+  "model_path": "legacy/mnist\\models\\mnist.pt",
+  "hyperparameters": {
+    "epochs": 3,
+    "batch_size": 64,
+    "test_batch_size": 1000,
+    "lr": 1.0,
+    "gamma": 0.7,
+    "seed": 42,
+    "threads": 2,
+    "optimizer": "Adadelta",
+    "scheduler": "StepLR(step_size=1, gamma=0.7)",
+    "normalization": {
+      "mean": 0.1307,
+      "std": 0.3081
+    }
+  }
+}

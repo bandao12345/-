@@ -1,0 +1,278 @@
+{
+  "version": "3.0.0",
+  "verified_at": "2026-10-22T12:26:05+08:00",
+  "unit_tests": {
+    "command": "python -X utf8 -m unittest discover -s tests -v",
+    "passed": 131,
+    "total": 131,
+    "seconds": 26.47,
+    "assistant_tests_included": 24,
+    "mcp_tests_included": 9,
+    "meaning": "Functional regression groups, not accuracy samples"
+  },
+  "browser": {
+    "checks": [
+      {
+        "name": "six navigation pages and an empty local library",
+        "passed": true
+      },
+      {
+        "name": "TXT file import creates real indexed document",
+        "passed": true
+      },
+      {
+        "name": "Markdown file import creates a second indexed document",
+        "passed": true
+      },
+      {
+        "name": "text PDF upload is extracted, indexed and previewed as real text",
+        "passed": true
+      },
+      {
+        "name": "editable text draft requires confirmation and renders HTML injection literally",
+        "passed": true
+      },
+      {
+        "name": "knowledge search returns excerpt and clickable source document",
+        "passed": true
+      },
+      {
+        "name": "offline assistant uses explicit false with real references and execution trace",
+        "passed": true
+      },
+      {
+        "name": "unknown query is answered without invented sources",
+        "passed": true
+      },
+      {
+        "name": "local LLM opt-in UI remains explicit; real call retained from first run",
+        "passed": true
+      },
+      {
+        "name": "document deletion removes only library material and cancels safely",
+        "passed": true
+      },
+      {
+        "name": "recognition mode controls preserve board pixels and upload input",
+        "passed": true
+      },
+      {
+        "name": "real pointer OCR board_digit with explicit alphanumeric",
+        "passed": true
+      },
+      {
+        "name": "real pointer OCR board_digits with explicit alphanumeric",
+        "passed": true
+      },
+      {
+        "name": "real pointer OCR board_latin with explicit alphanumeric",
+        "passed": true
+      },
+      {
+        "name": "real pointer OCR board_latins with explicit alphanumeric",
+        "passed": true
+      },
+      {
+        "name": "real pointer OCR board_han with explicit chinese",
+        "passed": true
+      },
+      {
+        "name": "real pointer OCR board_hans with explicit chinese",
+        "passed": true
+      },
+      {
+        "name": "sample JSON and busy guards retain true mode behavior",
+        "passed": true
+      },
+      {
+        "name": "real user record 1 keeps original text and exposes supported whole-character candidate",
+        "passed": true
+      },
+      {
+        "name": "whole-character candidate needs explicit confirmation and saves only corrected_text",
+        "passed": true
+      },
+      {
+        "name": "OCR organize action prefills saved correction and waits for editable confirmation",
+        "passed": true
+      },
+      {
+        "name": "history shows original and corrected text separately with stored structure candidates",
+        "passed": true
+      },
+      {
+        "name": "390px workbench has visible state and no horizontal overflow",
+        "passed": true
+      },
+      {
+        "name": "390px history has visible state and no horizontal overflow",
+        "passed": true
+      },
+      {
+        "name": "390px knowledge has visible state and no horizontal overflow",
+        "passed": true
+      },
+      {
+        "name": "390px assistant has visible state and no horizontal overflow",
+        "passed": true
+      },
+      {
+        "name": "390px evaluation has visible state and no horizontal overflow",
+        "passed": true
+      },
+      {
+        "name": "390px about has visible state and no horizontal overflow",
+        "passed": true
+      },
+      {
+        "name": "fresh mobile page defaults to offline even after desktop opted into local LLM",
+        "passed": true
+      },
+      {
+        "name": "all browser JavaScript page errors remain zero",
+        "passed": true
+      }
+    ],
+    "passed": 30,
+    "total": 30,
+    "page_errors": [],
+    "screenshots_created": false,
+    "viewport_mobile_width": 390,
+    "pointer_scenarios_passed": 6,
+    "real_llm_call": {
+      "mode": "llm",
+      "llm_used": true,
+      "elapsed_ms": 3147.97,
+      "subject": "database transaction rollback from temporary indexed notes"
+    }
+  },
+  "han_structure": {
+    "user_confirmed_ground_truth": "你好",
+    "primary_and_raw_text_preserved": "丁尔女子",
+    "model_reinferred_candidate": "你好",
+    "supporting_views": 3,
+    "auto_applied": false,
+    "confirmed_save_and_knowledge_import_passed": true,
+    "weights_finetuned": false,
+    "derived_two_character_control": "女子 retained; not an independent natural handwriting benchmark"
+  },
+  "public_demo": {
+    "checks": [
+      {
+        "name": "anonymous health reports ready",
+        "passed": true
+      },
+      {
+        "name": "private API access is gated",
+        "passed": true
+      },
+      {
+        "name": "public authorized page loads",
+        "passed": true
+      },
+      {
+        "name": "HTTPS auth cookie is Secure and HttpOnly",
+        "passed": true
+      },
+      {
+        "name": "isolated demo has no private OCR records",
+        "passed": true
+      },
+      {
+        "name": "local LLM is configured on demo",
+        "passed": true
+      },
+      {
+        "name": "public same-origin document write works",
+        "passed": true
+      },
+      {
+        "name": "public search uses actual imported source",
+        "passed": true
+      },
+      {
+        "name": "public endpoint performs real grounded local generation",
+        "passed": true
+      },
+      {
+        "name": "public answer cites actual imported document",
+        "passed": true
+      },
+      {
+        "name": "public OCR model really runs",
+        "passed": true
+      },
+      {
+        "name": "temporary demo content removed",
+        "passed": true
+      },
+      {
+        "name": "private production history preserved",
+        "passed": true
+      }
+    ],
+    "passed": 13,
+    "count": 13,
+    "real_generated_reply": "灰雀实验编号为 GRAY-7319。\n\n本轮提供的参考片段：[1] 公网功能验收临时资料、[2] 工程训练的学习记录与验证方法、[3] OCR、CTC 与识别结果的解释、[4] 墨迹文字识别的使用与人工校对",
+    "real_generation_elapsed_ms": 9418.92,
+    "usage": {
+      "completion_tokens": 14,
+      "prompt_tokens": 1437,
+      "total_tokens": 1451
+    },
+    "private_records_preserved": 31,
+    "demo_contains_private_records": false,
+    "managed_fresh_start_verified": true,
+    "managed_reuse_verified": true
+  },
+  "production": {
+    "local_url": "http://127.0.0.1:5003/",
+    "server": "Waitress",
+    "private_records_preserved": 31,
+    "all_original_fields_hash_matches": true,
+    "original_mnist_project_modified": false
+  },
+  "deployment_limits": {
+    "ngrok_tunnel_verified": true,
+    "cloud_server_deployed": false,
+    "docker_installed_or_executed": false,
+    "ppt_screenshots_delivery_zip_requested": false
+  },
+  "reproduction": {
+    "mcp": "python -X utf8 tools/mcp_smoke.py",
+    "model_assets": "python -X utf8 tools/download_local_model.py --check",
+    "runtime_health": "GET /health",
+    "browser_evidence": "private build reports retained outside the source project; no hand-in screenshots generated"
+  },
+  "public_browser": {
+    "checked_at": "2026-10-22T04:43:33.555Z",
+    "checks": [
+      {
+        "name": "real Chrome loads authorized public page and OCR status",
+        "passed": true
+      },
+      {
+        "name": "six public pages render with real assets",
+        "passed": true
+      },
+      {
+        "name": "public assistant detects the configured local model",
+        "passed": true
+      },
+      {
+        "name": "all six public pages fit 390px mobile width",
+        "passed": true
+      },
+      {
+        "name": "no JavaScript page errors",
+        "passed": true
+      }
+    ],
+    "pageerrors": [],
+    "success": true
+  },
+  "startup_failure_checks": {
+    "optional_model_failure_keeps_http_startup": true,
+    "owned_model_cleanup_on_server_failure": true
+  }
+}

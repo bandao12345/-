@@ -1,0 +1,27 @@
+{
+  "prepared_on": "2026-11-03",
+  "scheme": 4,
+  "application_source": "Copied from existing completed project; no new features",
+  "public_tests": {
+    "passed": 49,
+    "total": 49,
+    "seconds": 13.951,
+    "original_131_is_historical": true
+  },
+  "ppt": {
+    "path": "presentations/墨迹INKLAB_项目答辩_14页.pptx",
+    "sha256": "ac78c96f9d03c0451789d8ac7c95c600f1c24cabc028f64d9c1e9097f3b732b0",
+    "copied_without_reauthoring": true
+  },
+  "data": "data/MNIST_Data.zip: 60000 training images + 10000 test images, with labels",
+  "excluded": [
+    "Private SQLite databases",
+    "API/account credentials and demo access links",
+    "Virtual environments and runtime caches",
+    "Large OCR/LLM weights (existing pinned download scripts retained)",
+    "Private handwriting regression fixtures"
+  ],
+  "github_published": false,
+  "largest_file_bytes": 11427459,
+  "source_model_weights_included": "legacy/mnist/models/mnist.pt"
+}

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f7fb">
+  <title>墨迹 INKLAB · 手写数字识别</title>
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script defer src="{{ url_for('static', filename='app.js') }}"></script>
+</head>
+<body>
+  <svg class="icon-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="m15 5 4 4M4 20l4-1L20 7a2.8 2.8 0 0 0-4-4L4 15z"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-history" viewBox="0 0 24 24"><path d="M3 10a9 9 0 1 1 1 7M3 4v6h6M12 7v5l3 2"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 3v17h17M8 15v-4m5 4V7m5 8V5"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5c-3-2-6-2-10-1v15c4-1 7-1 10 1 3-2 6-2 10-1V4c-4-1-7-1-10 1v15"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M4 15v5h16v-5"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v13m-5-5 5 5 5-5M4 17v4h16v-4"/></symbol>
+    <symbol id="i-undo" viewBox="0 0 24 24"><path d="M8 4 3 9l5 5M3 9h11a6 6 0 0 1 0 12h-3"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M9 6V3h6v3M6 6l1 15h10l1-15M10 10v7m4-7v7"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v1"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 2.8 7.2L22 12l-7.2 2.8L12 22l-2.8-7.2L2 12l7.2-2.8z"/></symbol>
+  </defs></svg>
+
+  <aside class="sidebar">
+    <a class="brand" href="#workbench" aria-label="墨迹，返回识别工作台"><span class="brand-mark">墨</span><span><strong>墨迹 <span>INKLAB</span></strong><small>让每一笔，都有答案</small></span></a>
+    <div class="sidebar-caption">工作空间</div>
+    <nav class="main-nav" aria-label="主导航">
+      <button class="nav-item active" data-page="workbench" id="tab-workbench" aria-current="page"><svg><use href="#i-pen"/></svg><span>识别工作台</span><span class="nav-dot"></span></button>
+      <button class="nav-item" data-page="history" id="tab-history"><svg><use href="#i-history"/></svg><span>识别记录</span><span class="nav-count" id="nav-record-count">0</span></button>
+      <button class="nav-item" data-page="evaluation" id="tab-evaluation"><svg><use href="#i-chart"/></svg><span>数据评估</span></button>
+      <button class="nav-item" data-page="about" id="tab-about"><svg><use href="#i-book"/></svg><span>实验改编</span></button>
+    </nav>
+    <div class="sidebar-note"><span class="mini-orbit">✦</span><strong>从一笔，到一个数字</strong><p>基于真实 MNIST 模型。手写、上传、识别、回看，在一个工作空间完成。</p><a href="#about">了解项目 <span>↗</span></a></div>
+    <div class="runtime"><span class="status-dot" id="service-dot"></span><div><strong id="service-status">正在连接服务</strong><small>本机 CPU · 数据保存在本机</small></div></div>
+  </aside>
+
+  <div class="app-shell">
+    <header class="topbar"><div class="breadcrumb"><span>INKLAB</span><span>/</span><strong id="breadcrumb-current">识别工作台</strong></div><div class="topbar-right"><span class="environment-tag">本地工作空间</span><span class="avatar" aria-hidden="true">墨</span></div></header>
+    <main id="main-content">
+      <section class="page" id="page-workbench" aria-labelledby="workbench-title">
+        <div class="page-heading"><div><div class="eyebrow">DIGIT RECOGNITION WORKSPACE</div><h1 id="workbench-title">写下数字，让灵感有迹可循<span class="title-dot">。</span></h1><p>随手画一笔，或上传一张图片。看看模型读到了什么。</p></div><div class="heading-label"><span class="live-dot"></span>REAL MODEL · REAL RESULTS</div></div>
+        <div class="overview-grid">
+          <div class="overview-stat"><span class="stat-icon blue"><svg><use href="#i-check"/></svg></span><div><small>标准测试准确率</small><strong id="overview-accuracy">—<span>%</span></strong><span class="stat-detail">MNIST 独立测试集</span></div></div>
+          <div class="overview-stat"><span class="stat-icon orange"><svg><use href="#i-grid"/></svg></span><div><small>训练 / 测试样本</small><strong id="overview-samples">—</strong><span class="stat-detail">真实数据 · 独立评估</span></div></div>
+          <div class="overview-stat"><span class="stat-icon mint"><svg><use href="#i-history"/></svg></span><div><small>工作空间识别记录</small><strong id="overview-total">—</strong><span class="stat-detail">成功结果自动保存</span></div></div>
+        </div>
+        <div class="workbench-grid">
+          <article class="panel input-panel"><div class="panel-heading"><div><span class="section-number">01</span><h2>输入一个数字</h2></div><span class="soft-label">0 — 9</span></div>
+            <div class="input-mode" role="tablist" aria-label="输入方式"><button id="mode-canvas" class="selected" role="tab" aria-selected="true"><svg><use href="#i-pen"/></svg>手写画板</button><button id="mode-upload" role="tab" aria-selected="false"><svg><use href="#i-upload"/></svg>上传图片</button></div>
+            <div id="canvas-input"><div class="canvas-wrap"><span class="canvas-corner top-left"></span><span class="canvas-corner top-right"></span><span class="canvas-corner bottom-left"></span><span class="canvas-corner bottom-right"></span><canvas id="digit-canvas" width="320" height="320" aria-label="手写数字画板，用鼠标或触屏书写一个数字"></canvas><div class="canvas-hint" id="canvas-hint"><span class="hint-digit">7</span><span>在这里写一个数字</span><small>建议居中书写，占画板的大部分</small></div></div>
+              <div class="canvas-tools"><label for="stroke-width">笔触 <input id="stroke-width" type="range" min="8" max="30" value="18"><span id="stroke-width-value">18</span></label><div><button class="icon-button" id="undo-button" title="撤销上一笔" aria-label="撤销上一笔" disabled><svg><use href="#i-undo"/></svg></button><button class="icon-button" id="clear-button" title="清空画板" aria-label="清空画板"><svg><use href="#i-trash"/></svg></button></div></div>
+            </div>
+            <div id="upload-input" hidden><label class="upload-zone" id="drop-zone" for="image-upload"><input type="file" id="image-upload" accept="image/png,image/jpeg,image/webp"><svg><use href="#i-upload"/></svg><strong>拖入图片，或点击选择</strong><span>PNG / JPEG / WEBP · 最大 2 MB</span><small>建议单个数字，背景干净、笔迹清晰</small></label><div class="upload-preview" id="upload-preview-wrap" hidden><img id="upload-preview" alt="待识别的上传图片"><div><strong id="upload-name"></strong><small id="upload-size"></small><button class="text-button" id="replace-upload">重新选择图片</button></div></div></div>
+            <button class="primary-button predict-button" id="predict-button"><svg><use href="#i-spark"/></svg><span>开始识别</span><svg class="arrow-icon"><use href="#i-arrow"/></svg></button>
+            <p class="input-error" id="input-error" role="alert" hidden></p>
+            <div class="sample-section"><div><strong>先试试真实样例</strong><span>来自 MNIST 测试集</span></div><div class="sample-grid" id="sample-grid" aria-label="数字样例"><span class="muted">正在读取样例…</span></div></div>
+          </article>
+          <article class="panel result-panel"><div class="panel-heading"><div><span class="section-number">02</span><h2>模型识别结果</h2></div><span class="result-status" id="result-status">等待输入</span></div>
+            <div id="result-empty" class="result-empty"><div class="empty-illustration"><div class="empty-tile">?</div><span class="orbit-dot orbit-a"></span><span class="orbit-dot orbit-b"></span><span class="orbit-dot orbit-c"></span></div><h3>下一笔，会是什么？</h3><p>在左侧写下 0 到 9 的一个数字，<br>识别结果和模型判断依据将在这里呈现。</p><span class="subtle-tip"><svg><use href="#i-info"/></svg>每次成功识别都会自动保存</span></div>
+            <div id="result-content" hidden><div class="prediction-hero"><div class="prediction-number" id="result-digit">—</div><div><small>模型认为这是</small><h3>数字 <span id="result-digit-label">—</span></h3><span class="confidence-badge"><span class="mini-dot"></span><strong id="result-confidence">—</strong> 置信度</span></div><span class="prediction-watermark" aria-hidden="true">INK</span></div><div class="result-meta"><span id="result-source">手写画板</span><span><span id="result-elapsed">—</span> ms 推理</span><span id="result-saved">已保存</span></div><div class="probability-heading"><h3>模型的前三个判断</h3><span>TOP 3</span></div><div id="top3-list" class="probability-list"></div><div class="preprocess-card"><div><strong>模型实际看到的图像</strong><p>裁边 · 等比缩放 · 居中归一化</p><span>28 × 28 灰度输入</span></div><img id="processed-image" alt="实际送入模型的28乘28预处理图像"></div><div class="result-warnings" id="result-warnings" hidden></div><p class="model-caveat">置信度表示模型判断的倾向，不等同于结果一定正确。多个数字或与训练集差异较大的笔迹可能识别错误。</p></div>
+          </article>
+        </div>
+        <article class="panel recent-panel"><div class="panel-heading"><div><svg class="heading-icon"><use href="#i-history"/></svg><h2>最近的识别</h2><span class="quiet-count">RECENT ACTIVITY</span></div><button class="text-button" data-go="history">查看全部 <span>→</span></button></div><div id="recent-records" class="recent-records"><p class="empty-inline">正在读取识别记录…</p></div></article>
+        <div class="page-footnote"><svg><use href="#i-info"/></svg>基于华为云 MNIST 实验改编 · 本机 CPU 推理 · 原始图片不上传到第三方服务</div>
+      </section>
+
+      <section class="page" id="page-history" aria-labelledby="history-title" hidden>
+        <div class="page-heading"><div><div class="eyebrow">YOUR RECOGNITION LIBRARY</div><h1 id="history-title">每一次识别，都值得回看<span class="title-dot">。</span></h1><p>筛选、核对、补充备注，让识别记录成为可以追溯的数据。</p></div><div class="heading-actions"><button class="secondary-button" id="export-button"><svg><use href="#i-download"/></svg>导出 CSV</button><button class="danger-text-button" id="clear-history-button"><svg><use href="#i-trash"/></svg>清空记录</button></div></div>
+        <article class="panel history-panel"><form class="filter-bar" id="history-filters"><label>识别数字<select id="filter-digit" name="digit"><option value="">全部数字</option><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option></select></label><label>输入来源<select id="filter-source" name="source"><option value="">全部来源</option><option value="canvas">手写画板</option><option value="upload">图片上传</option><option value="sample">测试样例</option></select></label><label>开始日期<input id="filter-from" type="date" name="date_from"></label><label>结束日期<input id="filter-to" type="date" name="date_to"></label><button class="primary-button filter-submit" type="submit"><svg><use href="#i-search"/></svg>筛选</button><button class="text-button" type="reset">重置</button></form><div class="list-heading"><h2>识别记录 <span id="history-total">0</span></h2><p id="history-summary">所有成功识别都会保存在本机数据库</p></div><div id="history-error" class="inline-error" role="alert" hidden></div><div class="table-scroll"><table class="history-table"><thead><tr><th>输入图像</th><th>识别结果</th><th>置信度</th><th>来源</th><th>识别时间</th><th>人工校对</th><th>操作</th></tr></thead><tbody id="history-body"><tr><td colspan="7" class="table-empty">正在加载…</td></tr></tbody></table></div><div class="pagination"><span id="pagination-label">第 1 页</span><div><label>每页 <select id="per-page"><option value="10">10 条</option><option value="20">20 条</option><option value="50">50 条</option></select></label><button class="secondary-button" id="previous-page" disabled>上一页</button><button class="secondary-button" id="next-page" disabled>下一页</button></div></div></article>
+        <div class="info-banner"><svg><use href="#i-info"/></svg><p>人工校对和备注用于记录复核，不会改变模型预测，也不会自动触发模型训练。CSV 导出会沿用当前已应用的筛选条件。</p></div>
+      </section>
+
+      <section class="page" id="page-evaluation" aria-labelledby="evaluation-title" hidden>
+        <div class="page-heading"><div><div class="eyebrow">UNDERSTAND THE MODEL</div><h1 id="evaluation-title">让表现，有数据可循<span class="title-dot">。</span></h1><p>一边观察真实使用情况，一边理解模型在独立测试集上的表现。</p></div><span class="heading-label">MNIST · CPU</span></div>
+        <div class="evaluation-section-heading"><span class="section-number">01</span><h2>工作空间使用概况</h2><span>来自本机 SQLite 记录</span><button class="text-button" id="refresh-stats">刷新数据 ↻</button></div><div class="metric-grid"><div class="metric-card"><small>累计成功识别</small><strong id="stat-total">—</strong><span>失败请求不计入</span></div><div class="metric-card"><small>平均模型置信度</small><strong id="stat-confidence">—</strong><span>不代表真实识别正确率</span></div><div class="metric-card"><small>平均推理耗时</small><strong id="stat-elapsed">—</strong><span>来自已保存的识别记录</span></div><div class="metric-card"><small>人工校对记录</small><strong id="stat-feedback">—</strong><span>校对仅用于回看</span></div></div><div class="two-column"><article class="panel chart-panel"><div class="panel-heading"><h3>识别数字分布</h3><span class="soft-label">实时记录</span></div><div id="digit-distribution" class="distribution-chart"></div></article><article class="panel chart-panel"><div class="panel-heading"><h3>输入来源分布</h3><span class="soft-label">真实使用</span></div><div id="source-distribution" class="source-distribution"></div></article></div>
+        <div class="evaluation-section-heading model-section-heading"><span class="section-number">02</span><h2>模型独立测试评估</h2><span>来自训练产出的 metrics.json</span></div><div id="metrics-error" class="inline-error" hidden></div><div class="metric-grid"><div class="metric-card highlighted"><small>测试准确率</small><strong id="metric-accuracy">—</strong><span>MNIST 标准测试集</span></div><div class="metric-card"><small>正确 / 测试样本</small><strong id="metric-correct">—</strong><span>不包含训练样本</span></div><div class="metric-card"><small>训练数据量</small><strong id="metric-training">—</strong><span>28 × 28 手写数字图像</span></div><div class="metric-card"><small>训练轮数 / 设备</small><strong id="metric-epochs">—</strong><span id="metric-device">本机 CPU</span></div></div><div class="two-column evaluation-charts"><article class="panel chart-panel"><div class="panel-heading"><h3>训练过程</h3><span class="soft-label">真实逐轮指标</span></div><div class="chart-legend"><span><i class="legend-blue"></i>测试准确率</span><span><i class="legend-orange"></i>训练损失</span></div><div id="training-chart" class="training-chart"></div><p class="chart-caption">左轴为测试准确率，右轴为训练损失。每个节点对应一轮训练。</p></article><article class="panel chart-panel confusion-panel"><div class="panel-heading"><h3>混淆矩阵</h3><span class="soft-label">独立测试集</span></div><div class="matrix-layout"><span class="matrix-y-label">真实数字</span><div><div id="confusion-matrix" class="confusion-matrix"></div><span class="matrix-x-label">模型预测数字 →</span></div></div><p class="chart-caption">对角线是预测正确的样本，颜色越深表示样本越多。悬停或点选格子查看数量。</p></article></div><div class="info-banner amber"><svg><use href="#i-info"/></svg><p>标准测试集准确率不能直接代表随手绘制或上传图片的准确率。笔迹、背景、位置和多位数字都会影响结果；模型只支持单个 0–9 数字。</p></div>
+      </section>
+
+      <section class="page" id="page-about" aria-labelledby="about-title" hidden>
+        <div class="page-heading"><div><div class="eyebrow">FROM EXPERIMENT TO APPLICATION</div><h1 id="about-title">从手写数字实验，到完整应用<span class="title-dot">。</span></h1><p>保留模型任务的核心，用工程化的方式把一次推理变成完整体验。</p></div><span class="heading-label">工程训练 2 · 方案四</span></div><article class="source-hero panel"><div><span class="soft-label">原实验 · 华为云 ModelArts</span><h2>GPU迁移到NPU：<br>手写数字识别</h2><p>本项目选取该实验的 MNIST 分类任务与 CNN 结构，改编为本机 CPU 运行的 Flask 全栈识别系统。</p><a class="secondary-button" href="https://support.huaweicloud.com/qs-modelarts/modelarts_06_0035.html" target="_blank" rel="noopener noreferrer">查看华为云原实验 <span>↗</span></a></div><div class="source-graphic" aria-hidden="true"><span>28×28</span><div class="source-number">9</div><small>MNIST → INKLAB</small></div></article><div class="two-column about-columns"><article class="panel about-card"><span class="section-number">01</span><h2>我们改编了什么</h2><div class="comparison-row"><span>原实验</span><p>在模型开发环境中完成 MNIST 数据读取、CNN 训练与测试，并介绍 GPU 到 NPU 的迁移。</p></div><div class="comparison-row"><span>沿用</span><p>单数字分类任务、MNIST 数据及卷积网络思路，保留可核验的训练和测试指标。</p></div><div class="comparison-row"><span>新增</span><p>画板与上传交互、图片预处理、HTTP 推理接口、SQLite 持久化、查询导出、人工校对及评估看板。</p></div><div class="comparison-row"><span>实际环境</span><p>本次在本机 CPU 训练和推理；未执行或声称完成云端 GPU / NPU 迁移。</p></div></article><article class="panel about-card"><span class="section-number">02</span><h2>一个请求，如何变成结果</h2><ol class="flow-list"><li><span>1</span><div><strong>输入与校验</strong><p>画板、图片或真实测试样例；限制格式、大小与尺寸。</p></div></li><li><span>2</span><div><strong>预处理与推理</strong><p>灰度、反色判断、裁边、等比缩放与居中，送入 CNN。</p></div></li><li><span>3</span><div><strong>保存与呈现</strong><p>Flask 返回概率与预览，SQLite 保存成功记录。</p></div></li><li><span>4</span><div><strong>查询与复核</strong><p>按条件查询、查看详情、人工校对，并导出数据。</p></div></li></ol></article></div><article class="panel about-card engineering-card"><div><span class="section-number">03</span><h2>工程实现与使用边界</h2></div><div class="engineering-grid"><div><h3>前后端与数据</h3><p>原生 HTML / CSS / JavaScript + Flask API + SQLite，静态资源随项目提供，无需外部 CDN。</p></div><div><h3>协作开发</h3><p>由 CodeArts 开发过程与后续协作补全组成，具体贡献和验证结果以实际代码、会话及交付文档为准。</p></div><div><h3>结果的可解释性</h3><p>返回实际预处理图、Top 3 概率与耗时；异常输入明确报错，缺失模型不生成虚假预测。</p></div><div><h3>数据与局限</h3><p>识别记录保存在本机；对外开放时访问者可使用记录功能。适用于课程演示，不用于身份或高风险判断。</p></div></div></article>
+      </section>
+    </main><footer class="app-footer"><span>墨迹 INKLAB</span><span>每一次书写，都有迹可循。</span><a href="#about">项目与实验来源 ↗</a></footer>
+  </div>
+
+  <dialog id="record-dialog" class="record-dialog" aria-labelledby="record-dialog-title"><form method="dialog" class="dialog-top"><div><span class="eyebrow">RECORD DETAIL</span><h2 id="record-dialog-title">识别记录详情</h2></div><button class="icon-button" aria-label="关闭详情"><svg><use href="#i-close"/></svg></button></form><div id="record-detail-body"><p>正在加载…</p></div></dialog>
+  <dialog id="confirm-dialog" class="confirm-dialog" aria-labelledby="confirm-title"><div class="confirm-symbol"><svg><use href="#i-trash"/></svg></div><h2 id="confirm-title">确认删除</h2><p id="confirm-message"></p><div class="dialog-actions"><button class="secondary-button" id="confirm-cancel">取消</button><button class="danger-button" id="confirm-proceed">确认删除</button></div></dialog>
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="false"></div>
+</body>
+</html>

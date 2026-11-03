@@ -1,0 +1,281 @@
+{
+  "checked_at": "2026-10-22T03:36:49+08:00",
+  "scope": "汉字与字母数字两个模式的固定功能回归；不是总体准确率。",
+  "engine": {
+    "ready": true,
+    "engine": "PP-OCRv6 · RapidOCR / ONNX Runtime",
+    "model_tier": "medium",
+    "device": "cpu",
+    "threads": 2,
+    "model_version": "PP-OCRv6",
+    "source_url": "https://github.com/RapidAI/RapidOCR",
+    "license": "Apache-2.0",
+    "pipeline_version": "2.2",
+    "layout": "automatic complete rows / scene detection",
+    "stroke_dilation": false,
+    "supported_modes": [
+      {
+        "id": "chinese",
+        "label": "汉字"
+      },
+      {
+        "id": "alphanumeric",
+        "label": "字母／数字"
+      }
+    ],
+    "mode_constraint": "CTC character probabilities, before decoding"
+  },
+  "cases": [
+    {
+      "id": "digit_handwritten",
+      "label": "单数字 · MNIST 7 · 字母／数字",
+      "expected": "7",
+      "predicted": "7",
+      "exact_match": true,
+      "recognition_mode": "alphanumeric",
+      "confidence": 0.99996,
+      "elapsed_ms": 114.29,
+      "source_url": "https://support.huaweicloud.com/qs-modelarts/modelarts_06_0035.html",
+      "synthetic": false,
+      "warnings": []
+    },
+    {
+      "id": "digits_multi",
+      "label": "多数字 · 手写拼接 · 字母／数字",
+      "expected": "2026",
+      "predicted": "2026",
+      "exact_match": true,
+      "recognition_mode": "alphanumeric",
+      "confidence": 0.99991,
+      "elapsed_ms": 91.55,
+      "source_url": "https://support.huaweicloud.com/qs-modelarts/modelarts_06_0035.html",
+      "synthetic": true,
+      "warnings": []
+    },
+    {
+      "id": "latin_handwritten",
+      "label": "单字母 · NIST a · 字母／数字",
+      "expected": "a",
+      "predicted": "a",
+      "exact_match": true,
+      "recognition_mode": "alphanumeric",
+      "confidence": 0.99348,
+      "elapsed_ms": 78.32,
+      "source_url": "https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/main/docs/datasets/images/nist_demo.png",
+      "synthetic": false,
+      "warnings": []
+    },
+    {
+      "id": "latin_multi",
+      "label": "多字母 · 手写拼接 · 字母／数字",
+      "expected": "abc",
+      "predicted": "abc",
+      "exact_match": true,
+      "recognition_mode": "alphanumeric",
+      "confidence": 0.99837,
+      "elapsed_ms": 80.59,
+      "source_url": "https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/main/docs/datasets/images/nist_demo.png",
+      "synthetic": true,
+      "warnings": []
+    },
+    {
+      "id": "han_handwritten",
+      "label": "单汉字 · CASIA 耙 · 汉字",
+      "expected": "耙",
+      "predicted": "耙",
+      "exact_match": true,
+      "recognition_mode": "chinese",
+      "confidence": 0.79905,
+      "elapsed_ms": 71.89,
+      "source_url": "https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/main/docs/datasets/images/CASIA_0.jpg",
+      "synthetic": false,
+      "warnings": [
+        "部分文字置信度较低，请结合原笔迹核对。"
+      ]
+    },
+    {
+      "id": "han_multi",
+      "label": "多汉字 · 手写拼接 · 汉字",
+      "expected": "吧耙扳",
+      "predicted": "吧耙扳",
+      "exact_match": true,
+      "recognition_mode": "chinese",
+      "confidence": 0.88287,
+      "elapsed_ms": 75.26,
+      "source_url": "https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/main/docs/datasets/images/CASIA_0.jpg",
+      "synthetic": true,
+      "warnings": []
+    },
+    {
+      "id": "board_digit",
+      "label": "规范笔画 · 单数字 7 · 字母／数字",
+      "expected": "7",
+      "predicted": "7",
+      "exact_match": true,
+      "recognition_mode": "alphanumeric",
+      "confidence": 0.99996,
+      "elapsed_ms": 82.21,
+      "source_url": "",
+      "synthetic": true,
+      "warnings": []
+    },
+    {
+      "id": "board_digits",
+      "label": "规范笔画 · 多数字 2026 · 字母／数字",
+      "expected": "2026",
+      "predicted": "2026",
+      "exact_match": true,
+      "recognition_mode": "alphanumeric",
+      "confidence": 0.99996,
+      "elapsed_ms": 87.89,
+      "source_url": "",
+      "synthetic": true,
+      "warnings": []
+    },
+    {
+      "id": "board_latin",
+      "label": "规范笔画 · 单字母 A · 字母／数字",
+      "expected": "A",
+      "predicted": "A",
+      "exact_match": true,
+      "recognition_mode": "alphanumeric",
+      "confidence": 0.99377,
+      "elapsed_ms": 78.8,
+      "source_url": "",
+      "synthetic": true,
+      "warnings": []
+    },
+    {
+      "id": "board_latins",
+      "label": "规范笔画 · 多字母 ABC · 字母／数字",
+      "expected": "ABC",
+      "predicted": "ABC",
+      "exact_match": true,
+      "recognition_mode": "alphanumeric",
+      "confidence": 0.99949,
+      "elapsed_ms": 86.63,
+      "source_url": "",
+      "synthetic": true,
+      "warnings": []
+    },
+    {
+      "id": "board_han",
+      "label": "规范笔画 · 单汉字 中 · 汉字",
+      "expected": "中",
+      "predicted": "中",
+      "exact_match": true,
+      "recognition_mode": "chinese",
+      "confidence": 1.0,
+      "elapsed_ms": 73.74,
+      "source_url": "",
+      "synthetic": true,
+      "warnings": []
+    },
+    {
+      "id": "board_hans",
+      "label": "规范笔画 · 多汉字 中国 · 汉字",
+      "expected": "中国",
+      "predicted": "中国",
+      "exact_match": true,
+      "recognition_mode": "chinese",
+      "confidence": 0.99996,
+      "elapsed_ms": 70.28,
+      "source_url": "",
+      "synthetic": true,
+      "warnings": []
+    },
+    {
+      "id": "record_8.jpg",
+      "label": "实际用户预览 · 傻子",
+      "expected": "傻子",
+      "predicted": "傻子",
+      "exact_match": true,
+      "recognition_mode": "chinese",
+      "confidence": 0.99793,
+      "elapsed_ms": 94.32,
+      "sha256": "799963ff682e946a5c38567522365db27bfa91a6308a9e8e160089a456084f47",
+      "notes": "数据库预览恢复件，不是原画布像素。傻子和F由用户确认，1/6/9为独立目视参考；重复笔迹只作功能回归。",
+      "warnings": []
+    },
+    {
+      "id": "record_12.jpg",
+      "label": "实际用户预览 · 1F69",
+      "expected": "1F69",
+      "predicted": "1F69",
+      "exact_match": true,
+      "recognition_mode": "alphanumeric",
+      "confidence": 0.78945,
+      "elapsed_ms": 103.71,
+      "sha256": "cb2536a38206ebe41d81815d8a08ccd180caeed1d437080fb633a5c163608a60",
+      "notes": "数据库预览恢复件，不是原画布像素。傻子和F由用户确认，1/6/9为独立目视参考；重复笔迹只作功能回归。",
+      "warnings": [
+        "部分文字置信度较低，请结合原笔迹核对。",
+        "字母和数字混写时，O/0、I/1、b/6 等形近字符可能混淆，请核对。"
+      ]
+    },
+    {
+      "id": "record_13.jpg",
+      "label": "实际用户预览 · 1F69",
+      "expected": "1F69",
+      "predicted": "1F69",
+      "exact_match": true,
+      "recognition_mode": "alphanumeric",
+      "confidence": 0.9896,
+      "elapsed_ms": 109.77,
+      "sha256": "419ffb3260271b9da1dab2ea783c9db2b85af21515b4e0d4d4b6b4d6393317d8",
+      "notes": "数据库预览恢复件，不是原画布像素。傻子和F由用户确认，1/6/9为独立目视参考；重复笔迹只作功能回归。",
+      "warnings": [
+        "字母和数字混写时，O/0、I/1、b/6 等形近字符可能混淆，请核对。"
+      ]
+    }
+  ],
+  "manual_transcription_audit": {
+    "source": "https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/main/docs/datasets/images/CASIA_0.jpg",
+    "initial": "把 / 板",
+    "revised": "耙 / 扳",
+    "reason": "98像素原图初看误标，后独立放大审读：第四字左旁为耒（多横贯竖与撇捺），第五字左旁为扌而非木。两名协作审读者独立确认；图像像素未变。",
+    "qualification": "上游示例未提供逐字机器标注，预期仍为人工转写；修订有审计记录，不以OCR预测当作真值。"
+  },
+  "sources": [
+    "https://github.com/RapidAI/RapidOCR",
+    "https://github.com/PaddlePaddle/PaddleOCR/blob/main/docs/datasets/handwritten_datasets.md",
+    "https://www.nist.gov/srd/nist-special-database-19"
+  ],
+  "historical_auto_report": "docs/ocr_validation_auto_v6.json",
+  "note": "The earlier V5/V6 natural-line comparison used auto mode and is preserved separately. This mode split does not claim a new general accuracy score.",
+  "unit_tests": {
+    "total": 88,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 88,
+    "success": true,
+    "seconds": 17.407,
+    "groups": {
+      "image_io": 6,
+      "ocr_api": 36,
+      "legacy_v5": 11,
+      "v6_contract": 13,
+      "actual_user_quality": 3,
+      "layout_geometry": 6,
+      "mode_ctc_and_engine": 13
+    }
+  },
+  "summary": {
+    "total": 15,
+    "strict_matches": 15,
+    "notes": "12个适用于当前模式的既有固定小样，加3张用户错误预览；严格比较大小写、空格与全部字符，仅为功能回归，不能代表自然手写标准准确率。"
+  },
+  "browser": {
+    "scope": "Two explicit modes; fixed functional pointer/upload regressions, not general handwriting accuracy.",
+    "report": "docs/browser_validation_modes.json",
+    "functional_checks": 27,
+    "functional_passed": 27,
+    "pointer_total": 8,
+    "pointer_strict_matches": 8,
+    "quality_upload_total": 3,
+    "quality_upload_matches": 3,
+    "page_errors": [],
+    "screenshots_created": false
+  }
+}
