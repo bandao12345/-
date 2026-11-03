@@ -1,0 +1,6 @@
+{
+  "LLM_BASE_URL": "",
+  "LLM_MODEL": "",
+  "LLM_API_KEY": "",
+  "INKLAB_DISABLE_LOCAL_LLM": "0"
+}

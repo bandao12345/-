@@ -1,0 +1,15 @@
+services:
+  inklab:
+    build: .
+    ports:
+      - "127.0.0.1:5003:5003"
+    volumes:
+      - inklab-data:/data
+    environment:
+      LLM_BASE_URL: ${LLM_BASE_URL:-}
+      LLM_MODEL: ${LLM_MODEL:-}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+      INKLAB_TRUSTED_PROXY: ${INKLAB_TRUSTED_PROXY:-127.0.0.1}
+    restart: unless-stopped
+volumes:
+  inklab-data:

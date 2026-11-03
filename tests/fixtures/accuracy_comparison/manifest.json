@@ -1,0 +1,323 @@
+{
+  "schema_version": 1,
+  "purpose": "真实手写改进验收；所有分组独立报告，不把模型置信度或旧模型输出当GT。",
+  "source_url": "https://huggingface.co/spaces/PaddlePaddle/PP-OCRv6_Online_Demo/tree/38239da66d691571f891c2d203bf859f0847bece/examples",
+  "download_bytes": 885665,
+  "entries": [
+    {
+      "id": "official_ch_line_1",
+      "path": "official_ch_line_1.png",
+      "ground_truth": "自笑平生为口忙，",
+      "group": "official_natural_line",
+      "kind": "crop_of_genuine_handwriting",
+      "gt_authority": "independent_visual_transcription",
+      "sha256": "2a3b5e87c5454442bddfd170436affe7905eec81a35b2861e13c642b0d94986b",
+      "source_url": "https://huggingface.co/spaces/PaddlePaddle/PP-OCRv6_Online_Demo/resolve/38239da66d691571f891c2d203bf859f0847bece/examples/handwrite_ch_demo.png",
+      "crop_box": [
+        72,
+        151,
+        366,
+        198
+      ],
+      "notes": "官方示例页目视转写，非发布方提供真值；保留纸张与格线。仅为小样例，不估计总体准确率。"
+    },
+    {
+      "id": "official_ch_line_2",
+      "path": "official_ch_line_2.png",
+      "ground_truth": "老来事业转荒唐。",
+      "group": "official_natural_line",
+      "kind": "crop_of_genuine_handwriting",
+      "gt_authority": "independent_visual_transcription",
+      "sha256": "88e6c2506244ae27c57f6cd5dc83853ad8ba568cd6dbba84659473cdde300f25",
+      "source_url": "https://huggingface.co/spaces/PaddlePaddle/PP-OCRv6_Online_Demo/resolve/38239da66d691571f891c2d203bf859f0847bece/examples/handwrite_ch_demo.png",
+      "crop_box": [
+        72,
+        198,
+        366,
+        245
+      ],
+      "notes": "官方示例页目视转写，非发布方提供真值；保留纸张与格线。仅为小样例，不估计总体准确率。"
+    },
+    {
+      "id": "official_ch_line_3",
+      "path": "official_ch_line_3.png",
+      "ground_truth": "长江绕郭知鱼美，",
+      "group": "official_natural_line",
+      "kind": "crop_of_genuine_handwriting",
+      "gt_authority": "independent_visual_transcription",
+      "sha256": "28c82edda476a5744d8cf81e53e176f03dd89b3b3bd2ce1fa457f2dc7a665d36",
+      "source_url": "https://huggingface.co/spaces/PaddlePaddle/PP-OCRv6_Online_Demo/resolve/38239da66d691571f891c2d203bf859f0847bece/examples/handwrite_ch_demo.png",
+      "crop_box": [
+        72,
+        245,
+        366,
+        291
+      ],
+      "notes": "官方示例页目视转写，非发布方提供真值；保留纸张与格线。仅为小样例，不估计总体准确率。"
+    },
+    {
+      "id": "official_ch_line_4",
+      "path": "official_ch_line_4.png",
+      "ground_truth": "好竹连山觉笋香。",
+      "group": "official_natural_line",
+      "kind": "crop_of_genuine_handwriting",
+      "gt_authority": "independent_visual_transcription",
+      "sha256": "188071fe38bb2face73f0641c8d22fcae0f3dae2dc5fe4f30b8c5eca21cfa2ef",
+      "source_url": "https://huggingface.co/spaces/PaddlePaddle/PP-OCRv6_Online_Demo/resolve/38239da66d691571f891c2d203bf859f0847bece/examples/handwrite_ch_demo.png",
+      "crop_box": [
+        72,
+        291,
+        367,
+        341
+      ],
+      "notes": "官方示例页目视转写，非发布方提供真值；保留纸张与格线。仅为小样例，不估计总体准确率。"
+    },
+    {
+      "id": "official_ch_line_5",
+      "path": "official_ch_line_5.png",
+      "ground_truth": "逐客不妨员外置，",
+      "group": "official_natural_line",
+      "kind": "crop_of_genuine_handwriting",
+      "gt_authority": "independent_visual_transcription",
+      "sha256": "effcd15fffa3b22a4dd2ab3ee9dd355f1dc14042bb12562ed354e914a54cd80e",
+      "source_url": "https://huggingface.co/spaces/PaddlePaddle/PP-OCRv6_Online_Demo/resolve/38239da66d691571f891c2d203bf859f0847bece/examples/handwrite_ch_demo.png",
+      "crop_box": [
+        72,
+        381,
+        367,
+        430
+      ],
+      "notes": "官方示例页目视转写，非发布方提供真值；保留纸张与格线。仅为小样例，不估计总体准确率。"
+    },
+    {
+      "id": "official_ch_line_6",
+      "path": "official_ch_line_6.png",
+      "ground_truth": "诗人例作水曹郎。",
+      "group": "official_natural_line",
+      "kind": "crop_of_genuine_handwriting",
+      "gt_authority": "independent_visual_transcription",
+      "sha256": "07330d7ef65424051859ae3e1a371b08efcb9bc49ea7cab221d35b2bc8f4ba1b",
+      "source_url": "https://huggingface.co/spaces/PaddlePaddle/PP-OCRv6_Online_Demo/resolve/38239da66d691571f891c2d203bf859f0847bece/examples/handwrite_ch_demo.png",
+      "crop_box": [
+        72,
+        430,
+        367,
+        479
+      ],
+      "notes": "官方示例页目视转写，非发布方提供真值；保留纸张与格线。仅为小样例，不估计总体准确率。"
+    },
+    {
+      "id": "official_ch_line_7",
+      "path": "official_ch_line_7.png",
+      "ground_truth": "只惭无补丝毫事，",
+      "group": "official_natural_line",
+      "kind": "crop_of_genuine_handwriting",
+      "gt_authority": "independent_visual_transcription",
+      "sha256": "d80d38ce8f23706538e877beee6e1d484549161926e4b557ce484ef64eb7342f",
+      "source_url": "https://huggingface.co/spaces/PaddlePaddle/PP-OCRv6_Online_Demo/resolve/38239da66d691571f891c2d203bf859f0847bece/examples/handwrite_ch_demo.png",
+      "crop_box": [
+        72,
+        479,
+        367,
+        526
+      ],
+      "notes": "官方示例页目视转写，非发布方提供真值；保留纸张与格线。仅为小样例，不估计总体准确率。"
+    },
+    {
+      "id": "official_ch_line_8",
+      "path": "official_ch_line_8.png",
+      "ground_truth": "尚费官家压酒囊。",
+      "group": "official_natural_line",
+      "kind": "crop_of_genuine_handwriting",
+      "gt_authority": "independent_visual_transcription",
+      "sha256": "c2656f836249d81c3b476280314174e1b3589d0120fd0ae45a07a9c95069fa74",
+      "source_url": "https://huggingface.co/spaces/PaddlePaddle/PP-OCRv6_Online_Demo/resolve/38239da66d691571f891c2d203bf859f0847bece/examples/handwrite_ch_demo.png",
+      "crop_box": [
+        72,
+        526,
+        377,
+        576
+      ],
+      "notes": "官方示例页目视转写，非发布方提供真值；保留纸张与格线。仅为小样例，不估计总体准确率。"
+    },
+    {
+      "id": "official_ch_page",
+      "path": "official_ch_page.png",
+      "ground_truth": null,
+      "group": "official_natural_page_qualitative",
+      "kind": "genuine_handwriting",
+      "gt_authority": "not_scored_full_page",
+      "sha256": "28b1ad0e935a0309f8f44d6b4924ead2492feaa379a3a617e3a1fa919305b07f",
+      "source_url": "https://huggingface.co/spaces/PaddlePaddle/PP-OCRv6_Online_Demo/resolve/38239da66d691571f891c2d203bf859f0847bece/examples/handwrite_ch_demo.png",
+      "notes": "整页只做定性与行覆盖检查；逐行明确GT另列，标题/作者/签名避免无依据精确整页评分。"
+    },
+    {
+      "id": "official_en_line_1",
+      "path": "official_en_line_1.png",
+      "ground_truth": "Hold fast to dreams",
+      "group": "official_natural_line",
+      "kind": "crop_of_genuine_handwriting",
+      "gt_authority": "independent_visual_transcription",
+      "sha256": "0e0f70ec4bf09740166448dc714ee6a8dd703922dfd8e9c8aabf57b52ddcd789",
+      "source_url": "https://huggingface.co/spaces/PaddlePaddle/PP-OCRv6_Online_Demo/resolve/38239da66d691571f891c2d203bf859f0847bece/examples/handwrite_en_demo.png",
+      "crop_box": [
+        54,
+        135,
+        503,
+        190
+      ],
+      "notes": "官方示例页目视转写，非发布方提供真值；保留纸张与格线。仅为小样例，不估计总体准确率。"
+    },
+    {
+      "id": "official_en_line_2",
+      "path": "official_en_line_2.png",
+      "ground_truth": "For if dreams die",
+      "group": "official_natural_line",
+      "kind": "crop_of_genuine_handwriting",
+      "gt_authority": "independent_visual_transcription",
+      "sha256": "fdef353c7720670953c67bfed83298d89f0ab8e4dea58a40f28f50a99d2e7a8c",
+      "source_url": "https://huggingface.co/spaces/PaddlePaddle/PP-OCRv6_Online_Demo/resolve/38239da66d691571f891c2d203bf859f0847bece/examples/handwrite_en_demo.png",
+      "crop_box": [
+        54,
+        190,
+        503,
+        241
+      ],
+      "notes": "官方示例页目视转写，非发布方提供真值；保留纸张与格线。仅为小样例，不估计总体准确率。"
+    },
+    {
+      "id": "official_en_line_3",
+      "path": "official_en_line_3.png",
+      "ground_truth": "Life is a broken-winged",
+      "group": "official_natural_line",
+      "kind": "crop_of_genuine_handwriting",
+      "gt_authority": "independent_visual_transcription",
+      "sha256": "6de5b7a2773bb61733d156debf619eed208aff27411665fae5f7bbdde786368d",
+      "source_url": "https://huggingface.co/spaces/PaddlePaddle/PP-OCRv6_Online_Demo/resolve/38239da66d691571f891c2d203bf859f0847bece/examples/handwrite_en_demo.png",
+      "crop_box": [
+        52,
+        242,
+        509,
+        295
+      ],
+      "notes": "官方示例页目视转写，非发布方提供真值；保留纸张与格线。仅为小样例，不估计总体准确率。"
+    },
+    {
+      "id": "official_en_line_4",
+      "path": "official_en_line_4.png",
+      "ground_truth": "bird that cannot fly.",
+      "group": "official_natural_line",
+      "kind": "crop_of_genuine_handwriting",
+      "gt_authority": "independent_visual_transcription",
+      "sha256": "e9ae6958596edc1d471b5432691b772608c056fd3985d03e6af6f4fd824be9d6",
+      "source_url": "https://huggingface.co/spaces/PaddlePaddle/PP-OCRv6_Online_Demo/resolve/38239da66d691571f891c2d203bf859f0847bece/examples/handwrite_en_demo.png",
+      "crop_box": [
+        52,
+        295,
+        509,
+        348
+      ],
+      "notes": "官方示例页目视转写，非发布方提供真值；保留纸张与格线。仅为小样例，不估计总体准确率。"
+    },
+    {
+      "id": "official_en_line_5",
+      "path": "official_en_line_5.png",
+      "ground_truth": "Hold fast to dreams",
+      "group": "official_natural_line",
+      "kind": "crop_of_genuine_handwriting",
+      "gt_authority": "independent_visual_transcription",
+      "sha256": "220ba292eb575e6d5f6dfab76410311483407956af2eee33a46a2224cb55105a",
+      "source_url": "https://huggingface.co/spaces/PaddlePaddle/PP-OCRv6_Online_Demo/resolve/38239da66d691571f891c2d203bf859f0847bece/examples/handwrite_en_demo.png",
+      "crop_box": [
+        52,
+        351,
+        509,
+        404
+      ],
+      "notes": "官方示例页目视转写，非发布方提供真值；保留纸张与格线。仅为小样例，不估计总体准确率。"
+    },
+    {
+      "id": "official_en_line_6",
+      "path": "official_en_line_6.png",
+      "ground_truth": "For when dreams go",
+      "group": "official_natural_line",
+      "kind": "crop_of_genuine_handwriting",
+      "gt_authority": "independent_visual_transcription",
+      "sha256": "fc2a1f913f06c7e672600962aa4d59ceb0cba213d221547bab8dbcd11b0936b9",
+      "source_url": "https://huggingface.co/spaces/PaddlePaddle/PP-OCRv6_Online_Demo/resolve/38239da66d691571f891c2d203bf859f0847bece/examples/handwrite_en_demo.png",
+      "crop_box": [
+        52,
+        405,
+        509,
+        460
+      ],
+      "notes": "官方示例页目视转写，非发布方提供真值；保留纸张与格线。仅为小样例，不估计总体准确率。"
+    },
+    {
+      "id": "official_en_line_7",
+      "path": "official_en_line_7.png",
+      "ground_truth": "Life is a barren field",
+      "group": "official_natural_line",
+      "kind": "crop_of_genuine_handwriting",
+      "gt_authority": "independent_visual_transcription",
+      "sha256": "5158f30e19f0f561b622487c11c03eb242989564e1172f81ae125d98ea873091",
+      "source_url": "https://huggingface.co/spaces/PaddlePaddle/PP-OCRv6_Online_Demo/resolve/38239da66d691571f891c2d203bf859f0847bece/examples/handwrite_en_demo.png",
+      "crop_box": [
+        52,
+        460,
+        509,
+        518
+      ],
+      "notes": "官方示例页目视转写，非发布方提供真值；保留纸张与格线。仅为小样例，不估计总体准确率。"
+    },
+    {
+      "id": "official_en_line_8",
+      "path": "official_en_line_8.png",
+      "ground_truth": "Frozen with snow.",
+      "group": "official_natural_line",
+      "kind": "crop_of_genuine_handwriting",
+      "gt_authority": "independent_visual_transcription",
+      "sha256": "fac58d08a20d46155c7bede19796c161c4a5bcf6167b100ce44ba566ea3badf5",
+      "source_url": "https://huggingface.co/spaces/PaddlePaddle/PP-OCRv6_Online_Demo/resolve/38239da66d691571f891c2d203bf859f0847bece/examples/handwrite_en_demo.png",
+      "crop_box": [
+        52,
+        519,
+        509,
+        583
+      ],
+      "notes": "官方示例页目视转写，非发布方提供真值；保留纸张与格线。仅为小样例，不估计总体准确率。"
+    },
+    {
+      "id": "official_en_page",
+      "path": "official_en_page.png",
+      "ground_truth": null,
+      "group": "official_natural_page_qualitative",
+      "kind": "genuine_handwriting",
+      "gt_authority": "not_scored_full_page",
+      "sha256": "a00a5fe0302f72d1f6de2a13b64a6aaaab5f35de2cdda2581d49a6d578053118",
+      "source_url": "https://huggingface.co/spaces/PaddlePaddle/PP-OCRv6_Online_Demo/resolve/38239da66d691571f891c2d203bf859f0847bece/examples/handwrite_en_demo.png",
+      "notes": "整页只做定性与行覆盖检查；逐行明确GT另列，标题/作者/签名避免无依据精确整页评分。"
+    }
+  ],
+  "scoring": {
+    "normalization": "Unicode NFKC + 去所有空白；保留大小写及标点；同时报告逐项原文。",
+    "metrics": [
+      "exact_match",
+      "character_edit_distance",
+      "character_error_rate"
+    ],
+    "eligible_user_truth": [
+      "user_confirmed"
+    ],
+    "separate_groups": [
+      "user_confirmed",
+      "user_visual_reference",
+      "official_natural_line",
+      "derived_mixed_layout",
+      "official_natural_page_qualitative"
+    ],
+    "deduplicate": "record7/8同一图片，仅record7纳入用户确认统计。",
+    "limitations": "官方示例2位笔迹及用户少量样本不代表中文/英文总体识别率；不能据此保证任意手写。"
+  },
+  "reproduction_note": "所有输入固定于模型比较前；用户图片为数据库预览恢复件，不是原画布像素。独立人工转写、用户确认和无标注分组不可混为总体准确率。"
+}
